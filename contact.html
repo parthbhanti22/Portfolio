@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #4c00c9, #9c27b0);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            color: #e0e0e0;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .header {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item {
+            margin: 20px;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.1);
+            color: #a1ffce;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Transition effect for content appearance */
+        .hidden-content {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .visible-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Icon Section Styling */
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            background-color: #2e0069;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <nav class="flex justify-center space-x-12 mt-10">
+            <div class="menu-item bg-purple-700 text-white text-center py-2 px-4 rounded-lg shadow-lg cursor-pointer">
+                <a href="resume.html">Resume</a>
+            </div>
+            <div class="menu-item bg-purple-700 text-white text-center py-2 px-4 rounded-lg shadow-lg cursor-pointer">
+                <a href="projects.html">Projects</a>
+            </div>
+            <div class="menu-item bg-purple-700 text-white text-center py-2 px-4 rounded-lg shadow-lg cursor-pointer">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="menu-item about bg-purple-600 text-white text-center py-2 px-4 rounded-lg shadow-lg cursor-pointer">
+                <a href="about.html">About</a>
+            </div>
+            <div class="menu-item bg-purple-700 text-white text-center py-2 px-4 rounded-lg shadow-lg cursor-pointer">
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        <!-- Contact Section -->
+        <div class="contact-section hidden-content" id="contact-content">
+            <h1 class="header">Contact Me</h1>
+            <div class="contact-container">
+                <p class="contact-item">Email: <a href="mailto:parthbhanti22@gmail.com">parthbhanti22@gmail.com</a></p>
+                <p class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/parth-bhanti22/" target="_blank">linkedin.com/in/parth-bhanti22</a></p>
+                <p class="contact-item">Instagram: <a href="https://www.instagram.com/parthbhanti/" target="_blank">instagram.com/parthbhanti</a></p>
+                <p class="contact-item">GitHub: <a href="https://github.com/ParthBhanti" target="_blank">github.com/ParthBhanti</a></p>
+                <p class="contact-item">LeetCode: <a href="https://leetcode.com/u/parthbhanti/" target="_blank">leetcode.com/u/parthbhanti</a></p>
+                <p class="contact-item">CodeChef: <a href="https://www.codechef.com/users/peterparker22" target="_blank">codechef.com/users/peterparker22</a></p>
+            </div>
+
+            <!-- Icon Section -->
+            <div class="icon-container">
+                <img src="linkedin-icon.png" alt="LinkedIn" class="icon">
+                <img src="instagram-icon.png" alt="Instagram" class="icon">
+                <img src="github-icon.png" alt="GitHub" class="icon">
+                <img src="leetcode-icon.png" alt="LeetCode" class="icon">
+                <img src="codechef-icon.png" alt="CodeChef" class="icon">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Parth Bhanti. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to handle the scroll transition
+        function revealOnScroll() {
+            var element = document.getElementById('contact-content');
+            var windowHeight = window.innerHeight;
+            var elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible-content');
+            } else {
+                element.classList.remove('visible-content');
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+    </script>
+</body>
+
+</html>
